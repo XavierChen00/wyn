@@ -1,5 +1,8 @@
 $( document ).ready(function () {
     Parse.initialize("hrA3EdYBYrNz9SKLtUG0OpSIN5L9L0zQUvDIyLUs", "ALVDecc9XnfGQuCCO3rARwFxIOFSuRjyPkMuOHAp");
+    $(".glyphicon-refresh").click(function() {
+    location.reload();
+    });
 		var currentUser = Parse.User.current();
 		var username = document.getElementById('username').innerHTML;
 		currentUser.fetch().then(function(fetchedUser){
@@ -38,7 +41,7 @@ findPost.find({
              $li.append($question);
              $li.append($img);
              //$li.css("image", "url("+photo+")");
-             
+
              $img.css("height", "20%");
              $img.css("width", "20%");
              $img.css("margin-bottom", "10px");
