@@ -76,5 +76,3 @@ $("#SelectPic").click(function getPhoto(){
         note.save();
         alert("Success! You make check your results in your profile page");
     }); */
-
-});
