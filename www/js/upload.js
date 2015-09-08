@@ -71,7 +71,7 @@ function onPhotoDataSuccess(imageData) {
 
     // A button will call this function
     //
-    getPhoto = function (source) {
+    getPhoto = function () {
       // Retrieve image file location from specified source
       navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
         destinationType: destinationType.FILE_URI,
@@ -91,12 +91,12 @@ function onPhotoDataSuccess(imageData) {
         base64: imagedata
     });
     console.log(parseFile);
-    parseFile.save().then(function() {
+    parseFile.save()
         var note = new Parse.Object.extend("Upload");
         note.set("Username", Parse.User.current().getUsername());
         note.set("Question", noteText);
         note.set("Photo", parseFile);
-        note.save();
+        note.save().then(function() {
         alert("Success! You make check your results in your profile page");
         location.reload();
 
