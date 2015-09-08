@@ -52,6 +52,7 @@ function onPhotoDataSuccess(idata) {
       // The in-line CSS rules are used to resize the image
       //
       largeImage.src = imageURI;
+      imagedata = imageURI
     }
 
     // A button will call this function
@@ -74,7 +75,7 @@ function onPhotoDataSuccess(idata) {
     //
     getPhoto = function () {
       // Retrieve image file location from specified source
-      navigator.camera.getPicture(onPhotoDataSuccess, onPhotoURISuccess, onFail, { quality: 50,
+      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
         destinationType: destinationType.FILE_URI,
         sourceType: pictureSource.PHOTOLIBRARY });
     };
