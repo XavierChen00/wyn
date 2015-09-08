@@ -15,7 +15,7 @@ destinationType = navigator.camera.DestinationType;
 
 // Called when a photo is successfully retrieved
 //
-function onPhotoDataSuccess(idata) {
+function onPhotoDataSuccess() {
       // Uncomment to view the base64-encoded image data
       // console.log(imageData);
 
@@ -30,8 +30,8 @@ function onPhotoDataSuccess(idata) {
       // Show the captured photo
       // The in-line CSS rules are used to resize the image
       //
-      smallImage.src = "data:image/jpeg;base64," + idata;
-      imagedata = idata;
+      smallImage.src = "data:image/jpeg;base64,"
+      
     }
 
     // Called when a photo is successfully retrieved
@@ -76,7 +76,7 @@ function onPhotoDataSuccess(idata) {
     getPhoto = function () {
       // Retrieve image file location from specified source
       navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
-        destinationType: destinationType.FILE_URI,
+        destinationType: Camera.DestinationType.DATA_URL,
         sourceType: pictureSource.PHOTOLIBRARY });
     };
 
