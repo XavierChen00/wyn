@@ -57,12 +57,16 @@ function onPhotoDataSuccess(imageData) {
     //
 // Called when a photo is successfully retrieved
 //
-$("#SelectPic").click(function getPhoto(){
+$("#SelectPic").on("click", function(e) {
+		e.preventDefault();
 		navigator.camera.getPicture(onPhotoURISuccess, onFail,
 			{quality:50, destinationType:navigator.camera.DestinationType.DATA_URL,
 			 sourceType:navigator.camera.PictureSourceType.PHOTOLIBRARY});
 	});
 
+  function onFail(message) {
+        alert('Failed because: ' + message);
+      }
 //  });
 /*    $('#Post').bind("click", function(e) {
     var noteText = $("#QuestionText").val();
