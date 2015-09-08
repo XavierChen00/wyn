@@ -1,4 +1,4 @@
-
+$( document ).ready(function() {
 //
 var pictureSource; // picture source
 var destinationType; // sets the format of returned value
@@ -104,4 +104,5 @@ function onPhotoDataSuccess(imageData) {
         location.reload();
 
     });
+});
 });
