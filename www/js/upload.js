@@ -73,7 +73,7 @@ function onPhotoDataSuccess(imageData) {
     //
     getPhoto = function () {
       // Retrieve image file location from specified source
-      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
+      navigator.camera.getPicture(gotPic ,onPhotoURISuccess, onFail, { quality: 50,
         destinationType: destinationType.FILE_URI,
         sourceType: pictureSource.PHOTOLIBRARY });
     };
@@ -90,14 +90,20 @@ function onPhotoDataSuccess(imageData) {
     var parseFile = new Parse.File("mypic.jpg", {
         base64: imagedata
     });
-    console.log(parseFile);
-    parseFile.save()
+    parseFile.save().then(function(){
         var note = new Parse.Object.extend("Upload");
         note.set("Username", Parse.User.current().getUsername());
         note.set("Question", noteText);
         note.set("Photo", parseFile);
-        note.save();
+        note.save().then(function(){
         alert("Success! You make check your results in your profile page");
         location.reload();
+      });
+      });
 });
+    function gotPic(data) {
+    
+    imagedata = data;
+    
+  }
 });
