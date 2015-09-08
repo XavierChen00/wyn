@@ -36,7 +36,7 @@ function onPhotoDataSuccess() {
 
     // Called when a photo is successfully retrieved
     //
-    function onPhotoURISuccess(imageURI) {
+    function onPhotoURISuccess() {
       // Uncomment to view the image file URI
       // console.log(imageURI);
 
@@ -51,8 +51,8 @@ function onPhotoDataSuccess() {
       // Show the captured photo
       // The in-line CSS rules are used to resize the image
       //
-      largeImage.src = imageURI;
-      imagedata = imageURI
+      largeImage.src = "data:image/jpeg;base64,"
+      
     }
 
     // A button will call this function
