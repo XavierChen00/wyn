@@ -96,10 +96,8 @@ function onPhotoDataSuccess(imageData) {
         note.set("Username", Parse.User.current().getUsername());
         note.set("Question", noteText);
         note.set("Photo", parseFile);
-        note.save().then(function() {
+        note.save();
         alert("Success! You make check your results in your profile page");
         location.reload();
-
-    });
 });
 });
