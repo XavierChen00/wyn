@@ -5,16 +5,15 @@ var destinationType; // sets the format of returned value
 var imagedata = "";
 // Wait for device API libraries to load
 //
-document.addEventListener("deviceready", onDeviceReady, false);
 
 // device APIs are available
 //
 Parse.initialize("hrA3EdYBYrNz9SKLtUG0OpSIN5L9L0zQUvDIyLUs", "ALVDecc9XnfGQuCCO3rARwFxIOFSuRjyPkMuOHAp");
 
-function onDeviceReady() {
+
     pictureSource = navigator.camera.PictureSourceType;
     destinationType = navigator.camera.DestinationType;
-}
+
 
 // Called when a photo is successfully retrieved
 //
